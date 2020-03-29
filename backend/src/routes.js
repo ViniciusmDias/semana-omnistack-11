@@ -36,10 +36,7 @@ routes.post(
       email: Joi.string()
         .required()
         .email(),
-      whatsapp: Joi.string()
-        .required()
-        .min(10)
-        .max(11),
+      whatsapp: Joi.string().required(),
       city: Joi.string().required(),
       uf: Joi.string()
         .required()
@@ -69,10 +66,7 @@ routes.post(
     [Segments.BODY]: Joi.object().keys({
       title: Joi.string().required(),
       description: Joi.string().required(),
-      value: Joi.number()
-        .required()
-        .min(2)
-        .max(5)
+      value: Joi.number().required()
     })
   }),
   IncidentController.create
